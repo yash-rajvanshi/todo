@@ -7,6 +7,7 @@ import { connectDB } from "./config/db.js";
 
 //imported rouutes
 import authRoutes from "./routes/authRoutes.js";
+import todoRoutes from "./routes/todoRoutes.js"
 
 dotenv.config();
 
@@ -24,8 +25,9 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
-
 app.use('/api/auth', authRoutes);
+app.use('/api/todos', todoRoutes);
+
 
 app.get("/",  (req ,res) => {
     res.json({message:'Api Running'});
