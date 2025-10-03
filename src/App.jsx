@@ -1,12 +1,18 @@
 import React from 'react'
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import { Fab, TextField, Typography } from '@mui/material';
+import { Routes, Route } from "react-router-dom";
+import Login from './pages/AuthPage.jsx'
+import ProtectedRoute from './components/ProtectedRoute.jsx';
+import Home from './pages/Home.jsx';
+import Register from './components/Register.jsx';
+import AuthPage from './pages/AuthPage.jsx';
+
 
 const App = () => {
   return (
-    <>b</>
-
+    <Routes>
+      <Route path='/authPage' element={<AuthPage/>} />
+      <Route path="/home" element={<ProtectedRoute> <Home /> </ProtectedRoute>} />
+    </Routes>
   )
 }
 

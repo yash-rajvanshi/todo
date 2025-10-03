@@ -2,7 +2,7 @@ import { Todo } from "../models/Todo.js";
 
 export const getTodo = async (req, res) => {
     try {
-        const todos = await Todo.find({ userId: req.user._id }).sort({ createdAt: -1 });
+        const todos = await Todo.find({ user: req.user._id }).sort({ createdAt: -1 });
 
         res.status(200).json({
             success: true,
